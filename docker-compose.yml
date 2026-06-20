@@ -2,8 +2,10 @@
 services:
   web:
     image: nginxdemos/hello:plain-text
+    expose:
+      - "80"
     environment:
-      - SERVICE_FQDN_WEB_80        # Coolify auto-generates a domain → routes to web:80
+      - SERVICE_FQDN_WEB_80        # Coolify generates a domain → routes to web:80
   db:
     image: postgres:16-alpine
     environment:
